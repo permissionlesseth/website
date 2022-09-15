@@ -1,0 +1,28 @@
+/* Add your own custom css here */
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+	-webkit-appearance: none;
+}
+
+input[type="number"] {
+	-moz-appearance: textfield;
+}
+
+.uk-notification {
+	z-index: 10000;
+}
+
+.uk-notification-message-success {
+	font-weight: bolder;
+	color: var(--color-gray-10);
+	background: #32d296;
+	border-radius: 10px;
+}
+
+.uk-notification-message-danger {
+	font-weight: bolder;
+	color: var(--color-gray-10);
+	background: #f0506e;
+	border-radius: 10px;
+}
