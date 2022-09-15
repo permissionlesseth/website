@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="zxx" class="uk-background-white dark:uk-background-gray-100 dark:uk-text-gray-20 uk-dark">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Permissionless NFT - Unique Generated NFT</title>
+        <meta name="description" content="NFT Marketplace Template">
+        <meta name="theme-color" content="#741ff5">
+
+        <!-- preload head styles -->
+        <link rel="preload" href="../assets/fonts/brand-icons/brand-icons.woff2" as="font" type="font/woff2" crossorigin>
+        <link rel="preload" href="../assets/fonts/unicons/Unicons.woff" as="font" type="font/woff" crossorigin>
+        <link rel="preload" href="../assets/css/swiper-bundle.min.css" as="style">
+        <link rel="preload" href="../assets/css/uikit.min.css" as="style">
+        <link rel="preload" href="../assets/css/theme/main.min.css" as="style">
+
+        <!-- preload footer scripts -->
+        <link rel="preload" href="../assets/js/uikit.min.js" as="script">
+        <link rel="preload" href="../assets/js/uikit-components.js" as="script">
+        <link rel="preload" href="../assets/js/jquery.min.js" as="script">
+        <link rel="preload" href="../assets/js/swiper-bundle.min.js" as="script">
+        <link rel="preload" href="../assets/js/feather.min.js" as="script">
+        <link rel="preload" href="../assets/js/typed.min.js" as="script">
+        <link rel="preload" href="../assets/js/anime.min.js" as="script">
+        <link rel="preload" href="../assets/js/app.js" as="script">
+        <link rel="preload" href="../assets/js/swiper-helper.js" as="script">
+        <link rel="preload" href="../assets/js/typed-helper.js" as="script">
+        <link rel="preload" href="../assets/js/anime-helper.js" as="script">
+        <link rel="preload" href="../assets/js/anime-helper-defined-timelines.js" as="script">
+
+        <!-- include styles -->
+        <script src="../assets/js/app-head.js"></script>
+        <link rel="stylesheet" href="../assets/css/theme/main.min.css">
+        <link rel="stylesheet" href="../assets/css/custom.css">
+
+        <!-- include scripts -->
+        <script src="../assets/js/uikit.min.js"></script>
+        <script src="../assets/js/uikit-components.js"></script>
+    </head>
+    <body class="uni-body">
+
+        <!-- Dark/Light toggle -->
+
+        <!-- Dark/Light toggle -->
+        <div class="darkmode-trigger uk-position-bottom-right uk-position-small uk-position-fixed uk-box-shadow-large uk-radius-circle" data-darkmode-toggle="">
+            <label class="switch">
+                <span class="sr-only">Dark mode toggle</span>
+                <input type="checkbox">
+                <span class="slider"></span>
+            </label>
+        </div>
+
+        <!-- Menu modal -->
+        <div id="uni_mobile_menu" class="uni-mobile-menu uk-offcanvas" data-uk-offcanvas="mode: push; overlay: true; flip: true; selPanel: .uk-offcanvas-bar-panel;">
+            <div class="uk-offcanvas-bar-panel uk-panel dark:uk-background-gray-100">
+                <div class="uni-mobile-menu-wrap uk-flex-column uk-flex-between" data-uk-height-viewport="offset-bottom: true;">
+                    <div class="uni-mobile-menu-content">
+                        <header class="uk-card uk-card-2xsmall uk-flex-middle uk-flex-between">
+                            <div class="uk-flex-1">
+                                <button aria-label="Close Menu" class="uk-offcanvas-close uk-button uk-button-small uk-button-icon uk-button-default uk-button-outline uk-radius-circle" type="button">
+                                    <i class="uk-icon-small" data-feather="arrow-left"></i>
+                                </button>
+                            </div>
+                            <div>
+                                <h5 class="uk-h5 uk-margin-remove">Navigation</h5>
+                            </div>
+                            <div class="uk-flex-1"></div>
+                        </header>
+                        <hr class="uk-margin-remove">
+                        <div class="uk-card uk-card-small">
+                            <div class="uk-panel">
+                                <ul class="uk-nav uk-nav-default">
+                                    <li class="uk-nav-header">Homepages</li>
+                                    <li><a href="connect-wallet.html">Connect wallet</a></li>
+                                    <li><a href="contact.html">Contact</a></li>
+                                    <li class="uk-nav-header">Content &amp; Privacy</li>
+                                    <li><a href="terms.html">Terms of use</a></li>
+                                    <li><a href="privact.html">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Connect wallet modal -->
+        <div id="uni_connect_wallet" class="uk-modal-full" data-uk-modal>
+            <div class="uk-modal-dialog">
+                <div class="uk-position-top uk-position-z-index-negative" data-uk-height-viewport="">
+                    <div class="uk-position-cover uk-background-cover uk-opacity-10 dark:uk-hidden" data-src="../assets/images/gradient-01.png" data-uk-img></div>
+                    <div class="uk-position-cover uk-background-cover uk-opacity-20 uk-hidden dark:uk-visible" data-src="../assets/images/gradient-01.png" data-uk-img></div>
+                </div>
+                <button class="uk-modal-close-full uk-close-large uk-position-small" type="button" data-uk-close></button>
+                <div class="uk-container">
+                    <div class="uk-grid uk-flex-center uk-flex-middle uk-child-width-1-2@m uk-section" data-uk-grid data-uk-height-viewport>
+                        <div>
+                            <div class="uk-panel uk-text-center">
+                                <h2 class="uk-h5 uk-h3@s uk-h2@l uk-margin-remove">Connect your wallet</h2>
+                                <div class="uk-grid uk-grid-xsmall uk-grid-small@m uk-child-width-1-2@m uk-margin-medium-top uk-margin-large-top@m" data-uk-grid="">
+                                    <div>
+                                        <div class="uk-panel uk-card uk-card-small uk-card-medium@m uk-card-border uk-radius-medium uk-radius-large@m uk-box-shadow-hover-small hover:uk-border-primary">
+                                            <a href="javascript:connectWallet('metamask')" class="uk-position-cover"></a>
+                                            <img src="../assets/images/icon-metamask.svg" alt="metamask">
+                                            <h4 class="uk-text-bold uk-h5@m uk-margin-small-top uk-margin-medium-top@m">Metamask</h4>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="uk-panel uk-card uk-card-small uk-card-medium@m uk-card-border uk-radius-medium uk-radius-large@m uk-box-shadow-hover-small hover:uk-border-primary">
+                                            <a href="javascript:connectWallet('bitgo')" class="uk-position-cover"></a>
+                                            <img src="../assets/images/icon-bitgo.svg" alt="bitgo">
+                                            <h4 class="uk-text-bold uk-h5@m uk-margin-small-top uk-margin-medium-top@m">BitGo</h4>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="uk-panel uk-card uk-card-small uk-card-medium@m uk-card-border uk-radius-medium uk-radius-large@m uk-box-shadow-hover-small hover:uk-border-primary">
+                                            <a href="javascript:connectWallet('trustwallet')" class="uk-position-cover"></a>
+                                            <img src="../assets/images/icon-trustwallet.svg" alt="trustwallet">
+                                            <h4 class="uk-text-bold uk-h5@m uk-margin-small-top uk-margin-medium-top@m">Trust Wallet</h4>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="uk-panel uk-card uk-card-small uk-card-medium@m uk-card-border uk-radius-medium uk-radius-large@m uk-box-shadow-hover-small hover:uk-border-primary">
+                                            <a href="javascript:connectWallet('coinbase')" class="uk-position-cover"></a>
+                                            <img src="../assets/images/icon-coinbase.svg" alt="coinbase">
+                                            <h4 class="uk-text-bold uk-h5@m uk-margin-small-top uk-margin-medium-top@m">Coinbase</h4>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+		
+		<!-- Mint NFT modal -->
+		<div id="uni_mint_nft" class="uk-modal" data-uk-modal data-bg-close="false">
+		    <div class="uk-modal-dialog uk-margin-auto-vertical">
+		        <div class="uk-position-top uk-position-z-index-negative">
+		            <div class="uk-position-cover uk-background-cover uk-opacity-10 dark:uk-hidden" data-src="../assets/images/gradient-01.png" data-uk-img></div>
+		            <div class="uk-position-cover uk-background-cover uk-opacity-20 uk-hidden dark:uk-visible" data-src="../assets/images/gradient-01.png" data-uk-img></div>
+		        </div>
+		        <button class="uk-modal-close-full uk-close-large uk-position-small" type="button" data-uk-close></button>
+		        <div class="uk-container">
+		            <div class="uk-flex-center uk-flex-middle uk-section">
+		                <div>
+		                    <div class="uk-panel uk-text-center">
+		                        <h2 class="uk-h5 uk-h3@s uk-h2@l uk-margin-small-top  uk-margin-small-top@m">Mint Your Unique NFT</h2>
+		                        <div class="uk-margin-medium-top uk-margin-small-top@m">
+		                            <div>
+										<form class="uk-form">
+											<fieldset class="uk-fieldset">
+												<div class="uk-margin">
+													<label class="uk-form-label" for="form-stacked-text">Mint amount</label>
+													<div class="uk-form-controls">
+														<input class="uk-input uk-form-large" id="form-mint-amount" type="number" placeholder="Please input" autocomplete="off" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" onafterpaste="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}">
+													</div>
+													<input type="button" value="Mint" id="form_mint_btn" class="uk-button uk-button-medium@m uk-button-primary uk-margin-medium-top uk-width-large@m" onclick="mintNFT()">
+												</div>
+											</fieldset>
+										</form>
+		                            </div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div>
+
+        <!-- Wrapper start -->
+        <div class="wrap">
+
+            <!-- Header start -->
+            <header class="uni-header uk-position-top">
+                <div class="uni-header-navbar" data-uk-sticky="top: 70; show-on-up: false; animation: uk-animation-slide-top" data-anime="opacity:[0, 1]; translateY:[-24, 0]; onview: true; delay: 0;">
+                    <div class="uk-container">
+                        <nav class="uk-navbar uk-navbar-container uk-navbar-transparent" data-uk-navbar>
+                            <div class="uk-navbar-top">
+                                <div class="uk-navbar-left">
+                                    <a class="uk-logo uk-navbar-item uk-h4 uk-h3@m uk-margin-remove" href="index.html"> <img class="uk-visible dark:uk-hidden" width="120" src="../assets/images/permissionless-logo.svg" alt="Permissionless NFT" loading="lazy"> <img class="uk-hidden dark:uk-visible" width="120" src="../assets/images/permissionless-logo.svg" alt="permissionless-logo" loading="lazy"> </a>
+                                </div>
+
+                                <div class="uk-navbar-right uk-flex-1 uk-flex-right">
+                                    <ul class="uk-navbar-nav dark:uk-text-gray-10 uk-visible@m" data-uk-scrollspy-nav="closest: li; scroll: true; offset: 80" data-uk-navbar-bound>
+                                        <li><a href="#uni_minting">Minting</a></li>
+                                        <li><a href="#uni_about">About</a></li>
+                                        <li><a href="#uni_faq">FAQ</a></li>
+										<li><a href="#uni_joincommunity">Mine Ethereum 1.0</a></li>
+                                    </ul>
+                                    <div class="uk-navbar-item">
+                                        <ul class="uk-subnav uk-subnav-small uk-visible@m">
+                                            <li>
+                                                <a href="https://twitter.com/permissionlesscc"><i class="uk-icon unicon-logo-twitter"></i></a>
+                                            </li>
+                                            <li>
+                                                <a href="https://discord.com/permissionlesscc"><i class="uk-icon unicon-logo-discord"></i></a>
+                                            </li>
+                                        </ul>
+
+                                        <!-- header: call to actions -->
+                                        <a href="#uni_connect_wallet" class="uk-button uk-button-medium@m uk-button-default uk-button-outline uk-margin-left uk-visible@m" data-uk-toggle="">
+                                            <span class="web3_wallet">Connect wallet</span>
+                                        </a>
+                                    </div>
+
+                                    <div class="uk-navbar-item uk-hidden@m">
+                                        <a href="#uni_connect_wallet" class="uk-button uk-button-medium@m uk-button-icon uk-hidden@m uk-margin-small-right" data-uk-toggle="">
+                                            <i class="uk-icon unicon-wallet"></i>
+                                        </a>
+                                        <a href="#uni_mobile_menu" data-uk-toggle>
+                                            <span class="uk-icon uk-icon-medium material-icons">menu</span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Header end -->
+
+            <!-- Hero start -->
+            <div id="uni_hero" class="uni-hero uk-section uk-section-xlarge uk-padding-remove-bottom uk-panel">
+                <div class="uk-position-top uk-position-z-index-negative uk-overflow-hidden uk-blend-overlay" data-uk-height-viewport="">
+                    <img class="uk-position-top-left uk-position-fixed uk-blur-large" style="left: -4%; top: -4%" width="500" src="../assets/images/gradient-circle.svg" alt="Circle">
+                    <img class="uk-position-bottom-right uk-position-fixed uk-blur-large" style="right: -4%; bottom: -4%" width="500" src="../assets/images/gradient-circle.svg" alt="Circle">
+                </div>
+                <div class="uk-position-top uk-position-z-index-negative" data-uk-height-viewport="">
+                    <div class="uk-position-cover uk-background-cover uk-opacity-10 dark:uk-hidden" data-src="../assets/images/gradient-01.png" data-uk-img></div>
+                    <div class="uk-position-cover uk-background-cover uk-opacity-20 uk-hidden dark:uk-visible" data-src="../assets/images/gradient-01.png" data-uk-img></div>
+                </div>
+                <div class="uk-panel uk-position-z-index">
+                    <div class="uk-container">
+                        <div class="uk-panel">
+                            <div class="uk-grid uk-grid-2xlarge uk-flex-middle uk-flex-between" data-uk-grid data-uk-height-viewport="offset-top: true; offset-bottom: 20;">
+                                <div class="uk-width-5-12@m">
+                                    <div class="uk-panel uk-position-z-index uk-text-center uk-text-left@m" data-anime="opacity:[0, 1]; translateY:[24, 0]; onview: true; delay: 100;">
+                                        <img class="uk-position-top-left" width="44" src="../assets/images/objects/ethereum-01.png" alt="object" style="top: -20%; left: 50%" data-anime="opacity:[0, 1]; scale:[0, 1]; onview: true; delay: 400;">
+                                        <img class="uk-position-left" width="16" src="../assets/images/objects/circle-01.png" alt="object" style="top: 16%; left: -16%" data-anime="opacity:[0, 1]; scale:[0, 1]; onview: true; delay: 420;">
+                                        <img class="uk-position-bottom-left" width="24" src="../assets/images/objects/circle-03.png" alt="object" style="bottom: -16%; left: 16%" data-anime="opacity:[0, 1]; scale:[0, 1]; onview: true; delay: 440;">
+                                        <h2 class="uk-h2 uk-heading-d3@m uk-margin-small uk-margin@m">Blockchain is Permissionless</h2>
+                                        <p class="uk-text-xlarge uk-width-xlarge@m uk-text-muted">Let's Celebrate the Ethereum Fork with a Permissionless NFT Mint! <br><b>- Almost Free:</b> 0.5% Copyright! <br><b>- Scarce:</b> 21 Million unique NFT's available <br><b>- Rewarding You:</b> 900 Trillion Hashrate will disappear when Ethereum launches POS</p>
+                                        <a href="#uni_mint_nft" class="uk-button uk-button-medium@m uk-button-gradient uk-margin-small-top" data-uk-toggle="">
+                                            <span>Mint Your Unique NFT!</span>
+                                            <i class="uk-icon-small unicon-arrow-right uk-text-bold"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="uk-width-6-12@m uk-flex-center">
+                                    <div class="uk-panel" data-anime="opacity:[0, 1]; translateY:[24, 0]; onview: true; delay: 200;">
+                                        <img class="uk-position-left uk-text-primary" width="44" src="../assets/images/objects/bitcoin-01.png" alt="object" style="top: 75%; left: -20%" data-uk-svg="" data-anime="opacity:[0, 1]; scale:[0, 1]; onview: true; delay: 460;">
+                                        <img class="uk-position-right" width="28" src="../assets/images/objects/x.png" alt="object" style="top: -4%; right: 16%" data-uk-svg="" data-anime="opacity:[0, 1]; scale:[0, 1]; onview: true; delay: 480;">
+                                        <img class="uk-position-right uk-opacity-10" width="300" src="../assets/images/blob-dashed.svg" alt="Blog dashed" style="top: -10%; right: 16%; fill: transparent" data-uk-svg="">
+                                        <svg style="top: -20%" class="uk-position-right uk-opacity-30" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill="#F796FF" d="M47.5,-67.2C55.9,-59.3,53.2,-37.9,56.7,-20.1C60.2,-2.3,69.9,11.8,70.8,27.3C71.7,42.9,63.8,59.9,50.6,64.4C37.3,68.9,18.6,60.8,-0.3,61.2C-19.3,61.6,-38.6,70.7,-53.5,66.7C-68.4,62.8,-78.9,45.9,-78.8,29.5C-78.7,13.2,-67.9,-2.7,-59.8,-16.8C-51.6,-31,-46,-43.3,-36.5,-50.9C-27,-58.4,-13.5,-61.1,3,-65.2C19.6,-69.4,39.1,-75.1,47.5,-67.2Z" transform="translate(100 100)">
+                                        </svg>
+                                        <div class="uk-grid uk-grid-xsmall uk-child-width-1-2" data-uk-grid="masonry: true;">
+                                            <div>
+                                                <div class="uni-item uk-card uk-overflow-hidden uk-radius uk-radius-large@m uk-box-shadow-hover-medium uk-visible-toggle uk-transition-toggle uk-box-shadow-medium uk-background-white dark:uk-background-white-5">
+                                                    <div class="uni-item-featured-image uk-panel uk-flex-middle uk-flex-center">
+                                                        <div class="uk-panel uk-image-middle">
+                                                            <img src="../assets/images/artwork/permissionless-nft.jpg" alt="Permissionless NFT" class="uk-radius-small uk-radius-large@m">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="uk-margin-large-top">
+                                                <div class="uni-item uk-card uk-overflow-hidden uk-radius uk-radius-large@m uk-box-shadow-hover-medium uk-visible-toggle uk-transition-toggle uk-box-shadow-medium uk-background-white dark:uk-background-white-5">
+                                                    <div class="uni-item-featured-image uk-panel uk-flex-middle uk-flex-center">
+                                                        <div class="uk-panel uk-image-middle">
+                                                            <img src="../assets/images/artwork/permissionless-nft.jpg" alt="NFT Permissionless Mint" class="uk-radius-small uk-radius-large@m">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                            <div class="uk-margin-large-top">
+                                                <div class="uni-item uk-card uk-overflow-hidden uk-radius uk-radius-large@m uk-box-shadow-hover-medium uk-visible-toggle uk-transition-toggle uk-box-shadow-medium uk-background-white dark:uk-background-white-5">
+                                                    <div class="uni-item-featured-image uk-panel uk-flex-middle uk-flex-center">
+                                                        <div class="uk-panel uk-image-middle">
+                                                            <img src="../assets/images/artwork/permissionless-nft.jpg" alt="NFT Permissionless Mint" class="uk-radius-small uk-radius-large@m">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Hero end -->
+
+            <!-- brands start -->
+            <div class="uni-brands uk-padding-3xlarge-top uk-padding-medium-bottom uk-padding-remove-top@m uk-padding-xlarge-bottom@m uk-panel uk-overflow-hidden" data-anime="opacity:[0, 1]; translateY:[24, 0]; onview: true; delay: 300;">
+                <div class="uk-container uk-container-small">
+                    <div class="uk-panel uk-text-center dark:uk-text-white">
+                        <header class="uk-panel uk-flex-center uk-flex-middle uk-text-center">
+                            <span class="uk-text-overline uk-text-bold uk-text-muted">Wallets </span>
+                        </header>
+                        <div class="uk-grid uk-grid-xlarge@m uk-child-width-1-2 uk-child-width-expand@m uk-flex-middle uk-flex-center uk-grid uk-margin-medium-top" data-uk-grid>
+                            <div><img class="uk-width-xsmall" src="../assets/images/wallets/wallet-01.svg" alt="Metamask" data-uk-svg></div>
+                            <div><img class="uk-width-xsmall" src="../assets/images/wallets/wallet-02.svg" alt="BitGo" data-uk-svg></div>
+                            <div><img class="uk-width-xsmall" src="../assets/images/wallets/wallet-03.svg" alt="Coinbase" data-uk-svg></div>
+                            <div><img class="uk-width-xsmall" src="../assets/images/wallets/wallet-04.svg" alt="Trust Wallet" data-uk-svg></div>
+                            <div><img class="uk-width-xsmall" src="../assets/images/wallets/wallet-05.svg" alt="Exodus" data-uk-svg></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- brands end -->
+
+            <img class="uk-width-2xsmall uk-flex-center uk-margin-auto uk-margin-medium uk-margin-large@m" src="../assets/images/divider-01.svg" alt="Divider" data-anime="opacity:[0, 1]; scale:[0, 1]; onview: true; delay: 100;">
+
+            <!-- how to mint start -->
+            <div id="uni_minting" class="uni-minting uk-section uk-section-xlarge@m uk-panel">
+                <div class="uk-container uk-container-small">
+                    <header class="uk-grid-xsmall uk-flex-center uk-flex-middle uk-grid" data-uk-grid data-anime="opacity:[0, 1]; translateY:[24, 0]; onview: true; delay: 200;">
+                        <div class="uk-panel uk-text-center">
+                            <h2 class="uk-h3 uk-h1@m">How to mint</h2>
+                        </div>
+                    </header>
+                    <div class="uk-panel uk-margin-medium-top uk-margin-2xlarge-top@m" data-anime="opacity:[0, 1]; translateY:[24, 0]; onview: true; delay: 300;">
+                        <img class="uk-position-top-left uk-text-secondary" width="36" src="../assets/images/objects/ethpw1.png" alt="Object" style="top: -16%; left: 8%">
+                        <img class="uk-position-bottom-right uk-text-primary" width="34" src="../assets/images/objects/ethercoin.png" alt="Object" style="bottom: 16%; right: -8%">
+                        <img class="uk-position-bottom-left uk-text-muted" width="29" src="../assets/images/objects/ethereum-01.png" alt="Object" style="bottom: 16%; left: -8%">
+                        <div class="uk-grid uk-child-width-1-2@s uk-grid-match" data-uk-grid="" data-anime="targets: > *; opacity:[0, 1]; translateY:[24, 0]; onview: -250; delay: anime.stagger(100);">
+                            <div>
+                                <div class="uk-panel uk-card uk-card-small uk-padding-large-horizontal uk-radius-medium uk-radius-large@m uk-box-shadow-xsmall dark:uk-background-white-5">
+                                    <div class="uk-grid uk-grid-medium@m" data-uk-grid="">
+                                        <div class="uk-width-1-3 uk-width-1-4@m">
+                                            <img src="../assets/images/icon-01.png" alt="Icon">
+                                        </div>
+                                        <div class="uk-panel uk-width-expand">
+                                            <h3 class="uk-h5 uk-h4@m">Connect your wallet</h3>
+                                            <p>Use Trust Wallet, Metamask or any wallet to connect to the app.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-panel uk-card uk-card-small uk-padding-large-horizontal uk-radius-medium uk-radius-large@m uk-box-shadow-xsmall dark:uk-background-white-5">
+                                    <div class="uk-grid uk-grid-medium@m" data-uk-grid="">
+                                        <div class="uk-width-1-3 uk-width-1-4@m">
+                                            <img src="../assets/images/icon-02.png" alt="Icon">
+                                            <div hidden class="uk-card uk-card-xsmall uk-radius-medium uk-background-gradient uk-flex-middle uk-flex-center uk-margin-medium-bottom@m">
+                                                <i class="uk-icon-medium uk-icon-medium@m unicon-select-window"></i>
+                                            </div>
+                                        </div>
+                                        <div class="uk-panel uk-width-expand">
+                                            <h3 class="uk-h5 uk-h4@m">Select your quantity</h3>
+                                            <p>Only 21 Million unique serial number NFT's will be minted! Celebrating Bitcoin's 21 Million number.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-panel uk-card uk-card-small uk-padding-large-horizontal uk-radius-medium uk-radius-large@m uk-box-shadow-xsmall dark:uk-background-white-5">
+                                    <div class="uk-grid uk-grid-medium@m" data-uk-grid="">
+                                        <div class="uk-width-1-3 uk-width-1-4@m">
+                                            <img src="../assets/images/icon-03.png" alt="Icon">
+                                            <div hidden class="uk-card uk-card-xsmall uk-radius-medium uk-background-gradient uk-flex-middle uk-flex-center uk-margin-medium-bottom@m">
+                                                <i class="uk-icon-medium uk-icon-medium@m unicon-select-window"></i>
+                                            </div>
+                                        </div>
+                                        <div class="uk-panel uk-width-expand">
+                                            <h3 class="uk-h5 uk-h4@m">Confirm transaction</h3>
+                                            <p>Ensure you confirm the transaction and have enough ETH ready for the gas fee to complete</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-panel uk-card uk-card-small uk-padding-large-horizontal uk-radius-medium uk-radius-large@m uk-box-shadow-xsmall dark:uk-background-white-5">
+                                    <div class="uk-grid uk-grid-medium@m" data-uk-grid="">
+                                        <div class="uk-width-1-3 uk-width-1-4@m">
+                                            <img src="../assets/images/icon-04.png" alt="Icon">
+                                            <div hidden class="uk-card uk-card-xsmall uk-radius-medium uk-background-gradient uk-flex-middle uk-flex-center uk-margin-medium-bottom@m">
+                                                <i class="uk-icon-medium uk-icon-medium@m unicon-select-window"></i>
+                                            </div>
+                                        </div>
+                                        <div class="uk-panel uk-width-expand">
+                                            <h3 class="uk-h5 uk-h4@m">Receive your NFTs</h3>
+                                            <p>Congrats! You're now a Permissionless Holder celebrating the fork of EtherCoin that will keep Ethereum 1.0 Mining with GPU alive.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- how to mint end -->
+
+            <img class="uk-width-medium uk-flex-center uk-margin-auto uk-margin-medium uk-margin-large@m" src="../assets/images/divider-01.svg" alt="Divider" data-anime="opacity:[0, 1]; translateY:[24, 0]; onview: true; delay: 100;">
+
+            <!-- numbers start -->
+            <div id="uni_about" class="uni-numbers uk-section uk-section-large@m">
+                <div class="uk-container">
+                    <div class="uk-panel">
+                        <img class="uk-position-bottom-left uk-text-secondary uni-animation-delay-large" width="32" src="../assets/images/objects/bitcoin-01.png" alt="Object" style="bottom: -32%; left: 30%" data-anime="opacity:[0, 1]; scale:[0, 1]; onview: -250; delay: 200;">
+                        <img class="uk-position-top-right" width="44" src="../assets/images/objects/ethereum-01.png" alt="Object" style="top: -25%; right: 25%" data-anime="opacity:[0, 1]; scale:[0, 1]; onview: -250; delay: 200;">
+                        <div class="uk-grid uk-grid-large uk-grid-2xlarge@m uk-child-width-expand@m uk-text-center uk-text-muted" data-uk-grid="" data-anime="targets: > *; opacity:[0, 1]; scale:[0.5, 1]; onview: -250; delay: anime.stagger(100);">
+                            <div>
+                                <div class="uk-panel">
+                                    <h4 class="uk-h3 uk-heading-d3@m uk-text-gradient uk-margin-xsmall uk-margin@m">Ethw.pw</h4>
+                                    <span>Symbol: <b>$ETHW</b> - (ETHASH) Algo - Ethereum POW chain: Maximizing Hashrate, Minimum ledger alterations! Decentralization and Permissionless. <b><a href="https://etherdao.org">Learn about Ethw.pw</a></b></span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-panel">
+                                    <h4 class="uk-h2@m uk-heading-d3@m uk-text-gradient uk-margin-xsmall uk-margin@m">EtherDAO.org<br></h4>
+                                    <span>Symbol: <b>$ETH1</b> - (ETHASH) Algo - Mining with GPU+ASICS - Saving 900 Trillon Hashrate mining network due to Ethereum 2.0 POS Upgrade! <b><a href="https://etherdao.org">Click here to Find out how we are helping miners</a></b></span>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="uk-panel">
+                                    <h4 class="uk-h2@m uk-heading-d3@m uk-text-gradient uk-margin-xsmall uk-margin@m"><a href="https://ethercoin.org">EtherCoin.org</a></h4>
+                                    <span>Symbol: <b>$ETHER</b> - (ProgPow) Algo - Mine with your GPU. Keep Mining Ethereum 1.0! Use your Ethereum Mining Rigs on <b>$ETHER!</b> >> <b><a href="https://ethercoin.org">Find out how</a></b></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- numbers end -->
+			
+            <img class="uk-width-2xsmall uk-flex-center uk-margin-auto uk-margin-medium uk-margin-large@m" src="../assets/images/divider-01.svg" alt="Divider" data-anime="opacity:[0, 1]; translateY:[-24, 0]; onview: true; delay: 100;">
+
+            <!-- faq start -->
+            <div id="uni_faq" class="uni-faq uk-section uk-section-large@m uk-panel uk-overflow-hidden uk-padding-2xlarge-bottom@m">
+                <div class="uk-container">
+                    <header class="uk-grid-xsmall uk-flex-center uk-flex-middle uk-text-center uk-child-width-auto@m uk-grid" data-uk-grid data-anime="opacity:[0, 1]; translateY:[24, 0]; onview: true; delay: 100;">
+                        <div class="uk-panel">
+                            <h2 class="uk-h3 uk-h1@m">FAQ</h2>
+                        </div>
+                    </header>
+                    <div class="uk-panel uk-margin-medium-top uk-margin-2xlarge-top@m">
+                        <ul class="uk-card uk-card-small uk-card-large@m uk-radius uk-radius-large@m uk-width-2xlarge@m uk-margin-auto uk-box-shadow-xsmall dark:uk-background-white-5" data-uk-accordion="collapsible: false" data-anime="opacity:[0, 1]; translateY:[24, 0]; onview: true; delay: 100;">
+                            <li>
+                                <a class="uk-accordion-title uk-h5@m" href="#">Why was Permissionless created?</a>
+                                <div class="uk-accordion-content uk-padding-small-bottom">
+                                    <p class="uk-text-small uk-text-large@m uk-text-muted">It's a movement. The NFT is to spread the word. The idea that the Blockchain is Permissionless. We can create, develop, and start an idea at anytime without Permission from anyone!</p>
+                                    <p class="uk-text-small uk-text-large@m uk-text-muted">Ethereum Devs are upgrading to POS, and removing all investors who helped secure and mine on the ETH network since the inception of ETHEREUM. So we created this movement and 3 ETH based chains to keep Ethereum 1.0 Mining ALIVE! <br><br>$ETH1 and $ETHER will be airdropped automatically to all ETH holders once the Ethereum Fork is complete.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="uk-accordion-title uk-h5@m" href="#">How we can buy and invest in this NFT?</a>
+                                <div class="uk-accordion-content uk-padding-small-bottom">
+                                    <p class="uk-text-small uk-text-large@m uk-text-muted">There is no need to buy the NFT. It is 0.5% copyright fee, and your normal ETH Gas fee when doing a transaction. 21 Million Unique Permissionless NFT's will be minted. </p>
+                                </div>
+                            </li>
+                            <li>
+                                <a class="uk-accordion-title uk-h5@m" href="#">Who is Permissionless for? Who can get involved? </a>
+                                <div class="uk-accordion-content uk-padding-small-bottom">
+                                    <p class="uk-text-small uk-text-large@m uk-text-muted">Everyone! Your friends, family, sisters, brothers, co-workers, partners, etc.
+									<br><br>Tell everyone about this. The community is about: developers, miners, contributors, creators, entrepeneurs, graphic artists, freelancers, bloggers, journalist, vloggers, content creators, traders, and all others who wish to help push this movement forward!</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- faq end -->
+
+            <img class="uk-width-2xsmall uk-flex-center uk-margin-auto uk-margin-medium uk-margin-large@m" src="../assets/images/divider-01.svg" alt="Divider" data-anime="opacity:[0, 1]; translateY:[24, 0]; onview: true; delay: 100;">
+
+            <!-- cta start -->
+            <div class="uni-cta uk-section uk-section-2xlarge@m uk-panel uk-overflow-hidden">
+                <img class="uk-cover uk-opacity-10" data-uk-cover src="../assets/images/collection-cta.png" alt="arrow">
+                <div class="uk-container">
+                    <div class="uk-card uk-flex-center uk-text-center">
+                        <div class="uk-panel uk-width-xlarge@m uk-position-z-index" data-anime="opacity:[0, 1]; translateY:[24, 0]; onview: true; delay: 100;">
+                            <img class="uk-position-top-left" width="24" src="../assets/images/objects/ethpw1.png" alt="Object" style="top: 0%; left: -16%">
+                            <img class="uk-position-bottom-right" width="34" src="../assets/images/objects/ethercoin.png" alt="Object" style="bottom: 16%; right: -8%">
+                            <img class="uk-position-top-right" width="40" src="../assets/images/objects/ethereum-02.png" alt="Object" style="top: 0%; right: -16%">
+                            <img class="uk-position-bottom-left" width="48" src="../assets/images/objects/bitcoin-01.png" alt="Object" style="bottom: 16%; left: -8%">
+                            <h2 class="uk-h3 uk-heading-d3@m">Let's start minting</h2>
+                            <a href="#" class="uk-button uk-button-small uk-button-large@m uk-button-gradient uk-margin-small-top uk-margin-large-top@m">Join community<br></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- cta end -->
+
+            <img class="uk-width-2xsmall uk-flex-center uk-margin-auto uk-margin-medium uk-margin-large@m" src="../assets/images/divider-01.svg" alt="Divider" data-anime="opacity:[0, 1]; translateY:[24, 0]; onview: true; delay: 100;">
+        </div>
+
+        <!-- Wrapper end -->
+
+        <!-- Footer start -->
+		<div id="uni_joincommunity" class="uni-numbers uk-section uk-section-large@m">
+        <footer class="uni-footer uk-section uk-section-xlarge@m">
+            <div class="uk-container">
+                <div class="uk-panel">
+                    <img class="uk-position-top-left" width="92" src="../assets/images/objects/ethereum-01.png" alt="object" style="top: 27%; left: 16%">
+                    <img class="uk-position-top-right" width="82" src="../assets/images/objects/ethercoin.png" alt="object" style="top: 8%; right: 16%">
+                    <img class="uk-position-bottom-right" width="46" src="../assets/images/objects/ethpw1.png" alt="object" style="bottom: 24%; right: 20%">
+                    <img class="uk-position-bottom-left" width="30" src="../assets/images/objects/ethpw1.png" alt="object" style="bottom: -2%; left: 19%">
+					<img class="uk-position-bottom-left" width="34" src="../assets/images/objects/ethercoin.png" alt="object" style="bottom: -1%; left: 40%">
+					<img class="uk-position-bottom-left" width="34" src="../assets/images/objects/ethereum-01.png" alt="object" style="bottom: 0%; left: 77%">
+                    <div class="uk-grid uk-flex-center uk-text-center" data-uk-grid>
+                        <div class="uk-width-large@m">
+                            <div class="uk-panel">
+                                <a href="index.html" class="uk-logo">
+                                    <img width="200" src="../assets/images/permissionless-logo.svg" alt="permissionless NFT">
+                                </a>
+                                <p class="uk-text-xlarge@m uk-margin-medium-top@m">We are celebrating the Ethereum Fork's by providing 21 million unique NFT mints to help keep mining hashrate on Ethereum 1.0 using the innovative chains: 
+								<b><br><br>Click below to learn more about the different ETH chains launching around Sept 15, 2022* ETA</br></b>
+								<br><a href="https://EthW.pw" target="_blank">EthW.pw - $ETHW</a>
+								<br><a href="https://ethercoin.org" target="_blank">EtherCoin - $ETHER</a>
+								<br><a href="https://etherdao.org" target="_blank">EtherDAO - $ETH1</a> </p>
+								
+                                <ul class="uk-subnav uk-subnav-small uk-flex-center uk-text-gray-40 uk-margin-top uk-margin-medium-top@m">
+                                    <li>
+                                        <a href="https://twitter.com/#><span class="uk-icon uk-icon-medium@m unicon-logo-twitter"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://discord.com/#"><span class="uk-icon uk-icon-medium@m unicon-logo-discord"></span></a>
+                                    </li>
+                                    <li>
+                                        <a href="https://instagram.com/#"><span class="uk-icon uk-icon-medium@m unicon-logo-telegram"></span></a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="uk-margin-medium uk-margin-3xlarge-top@m">
+                    <div class="uk-panel uk-text-small">
+                        <div class="uk-grid uk-child-width-auto@m uk-flex-center uk-flex-between@m uk-text-center uk-text-left@m" data-uk-grid>
+                            <div>
+                                <ul class="uk-subnav uk-subnav-small uk-text-muted uk-flex-center">
+                                    <li><a href="privacy.html">Privacy policy</a></li>
+                                    <li><a href="terms.html">Terms of use</a></li>
+									<li><a href="https://EthW.pw" target="_blank">EthW.pw - Original Ethereum Fork</a></li>
+									<li><a href="https://EtherCoin.org" target="_blank">EtherCoin.org ProgPOW, GPU only - Get $ETHER Airdrops</a></li>
+									<li><a href="http://EtherDao.org" target="_blank">EtherDao.org Innovation Fork - Airdrops</a></li>
+                                    <li class="uk-margin-small-left">
+                                        <a href="#" data-uk-totop="" data-uk-scroll><i class="uk-icon uk-icon-small unicon-chevron-up"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="uk-flex-first@m uk-flex-center">
+                                <p class="uk-text-muted">© 2021-2022 Permissionless.cc - All rights reserved.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			<br><br><br><br><br><br>>>> Transparency disclaimer <<< This website accepts no responsibility over your financial outcomes. This website does not provide or guarantee any financial gains nor does it provide financial advice. By minting this NFT, you agree to our terms of service,
+			and copyright terms which are 0.5% for developers and creators to pay for overhead and expenses in launching this awareness operation. </br> 
+        </footer>
+        <!-- Footer end -->
+
+        <!-- include scripts -->
+        <script defer src="../assets/js/jquery.min.js"></script>
+        <script defer src="../assets/js/swiper-bundle.min.js"></script>
+        <script defer src="../assets/js/feather.min.js"></script>
+        <script defer src="../assets/js/typed.min.js"></script>
+        <script defer src="../assets/js/anime.min.js"></script>
+        <script defer src="../assets/js/app.js"></script>
+        <script defer src="../assets/js/swiper-helper.js"></script>
+        <script defer src="../assets/js/typed-helper.js"></script>
+        <script defer src="../assets/js/anime-helper.js"></script>
+        <script defer src="../assets/js/anime-helper-defined-timelines.js"></script>
+        <script>
+            // Schema toggle via URL
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
+            const getSchema = urlParams.get("schema");
+            if (getSchema === "dark") {
+                document.documentElement.classList.add("uk-dark");
+                localStorage.setItem("darkMode", "1");
+            } else if (getSchema === "light") {
+                document.documentElement.classList.remove("uk-dark");
+                localStorage.setItem("darkMode", "0");
+            }
+        </script>
+		<!-- Web3 -->
+		<script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+		<script defer src="../assets/js/contract.js"></script>
+		<script defer src="../assets/js/index.js"></script>
+    </body>
+</html>
